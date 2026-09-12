@@ -33,14 +33,15 @@
     <div class="brand"><span class="brand-mark">✦</span><div>豆豆魔法屋<small>BEAD CREATIVE STUDIO</small></div></div>
     <div class="top-actions"><button class="ghost">我的作品</button><button class="ghost">快捷指南</button></div>
   </header>
-  <section class="hero">
-    <div class="hero-copy">
-      <div class="eyebrow">BEAD · PIXEL · PLAY</div>
-      <h1>DIY你的独家拼豆 ✦</h1>
-      <p>上传一张喜欢的图片，生成专属拼豆图案。</p>
-      <div class="hero-meta" style="margin-top:18px"><div class="metric"><span>当前规格</span><b id="heroSize">104 × 104</b></div><div class="metric"><span>拼豆总数</span><b id="heroTotal">10,816</b></div><div class="spark">✦</div></div>
+<section class="hero" style="display: block; padding: 0; border: none; background: transparent; box-shadow: none; min-height: auto;">
+    <img src="banner.png" alt="TZJOY Banner" style="width: 100%; height: auto; border-radius: 30px; display: block; object-fit: cover;">
+    
+    <!-- 隐藏的容器：保留原有的 ID，防止底部的 JS 代码报错 -->
+    <div style="display: none;">
+      <b id="heroSize">104 × 104</b>
+      <b id="heroTotal">10,816</b>
+      <div id="heroThree"></div>
     </div>
-    <div class="hero-art" id="heroArt"><span class="hero-badge">✿ TZJOY Beads</span><div id="heroThree"></div></div>
   </section>
 
   <section class="studio">
