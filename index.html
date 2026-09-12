@@ -81,7 +81,6 @@
         <div class="source-preview" id="sourcePreview" aria-live="polite"><img id="sourceImagePreview" alt="原始上传图片预览"><div><b>原始图片预览</b><span id="sourceImageInfo">将以此图片生成拼豆图</span><span class="source-note">仅图像外围白色 / 浅灰背景不会计入拼豆</span></div></div>
         <div class="controls">
           <span class="control-label">拼豆尺寸</span>
-          <!-- 改为 5 个档位：26, 36, 52, 78, 104 -->
           <div class="segmented" id="sizeButtons">
             <button data-size="26" class="active">26格</button>
             <button data-size="36">36格</button>
@@ -234,19 +233,103 @@ M1 #BCC6B8|M10 #C5B2BC|M11 #9F7594|M12 #644749|M13 #D19066|M14 #C77362|M15 #757D
       return best;
     }
 
+    // 优化后的降采样逻辑：使用区域块平均采样（Area Sampling）解决轮廓偏差与边缘丢失问题
     function quantizeSourceImage(){
       if(!sourceImage){paintDefault();return;}
-      const n=size, off=document.createElement('canvas'); off.width=off.height=n;
-      const offCtx=off.getContext('2d',{willReadFrequently:true});
-      offCtx.clearRect(0,0,n,n);
-      const ratio=Math.min(n/sourceImage.width,n/sourceImage.height);
-      const width=sourceImage.width*ratio, height=sourceImage.height*ratio;
-      offCtx.drawImage(sourceImage,(n-width)/2,(n-height)/2,width,height);
-      const data=offCtx.getImageData(0,0,n,n).data, colors=paletteRgb(), outerBackground=outerBackgroundMask(data,n); beadIndices=[];
-      for(let i=0;i<n*n;i++){
-        const k=i*4, r=data[k],g=data[k+1],b=data[k+2];
-        beadIndices.push(outerBackground[i] ? null : closestPalette(r,g,b,colors));
+      const n = size;
+      
+      // 创建离屏画布获取完整高精度原图像素
+      const tempCanvas = document.createElement('canvas');
+      tempCanvas.width = sourceImage.width;
+      tempCanvas.height = sourceImage.height;
+      const tCtx = tempCanvas.getContext('2d', { willReadFrequently: true });
+      tCtx.drawImage(sourceImage, 0, 0);
+      const imgData = tCtx.getImageData(0, 0, sourceImage.width, sourceImage.height);
+      const data = imgData.data;
+
+      // 计算原图等比缩放到 n x n 网格时的偏移与实际占位大小
+      const ratio = Math.min(n / sourceImage.width, n / sourceImage.height);
+      const scaledW = sourceImage.width * ratio;
+      const scaledH = sourceImage.height * ratio;
+      const offsetX = (n - scaledW) / 2;
+      const offsetY = (n - scaledH) / 2;
+
+      // 建立临时网格存放每个格子的平均颜色与透明度状态
+      const gridRawColors = [];
+      const colors = paletteRgb();
+
+      const xStep = sourceImage.width / n;
+      const yStep = sourceImage.height / n;
+
+      for (let row = 0; row < n; row++) {
+        for (let col = 0; col < n; col++) {
+          // 将当前网格反算回原图坐标系对应的区块
+          let srcStartX = col * xStep;
+          let srcEndX = (col + 1) * xStep;
+          let srcStartY = row * yStep;
+          let srcEndY = (row + 1) * yStep;
+
+          let startX = Math.floor(srcStartX);
+          let endX = Math.ceil(srcEndX);
+          let startY = Math.floor(srcStartY);
+          let endY = Math.ceil(srcEndY);
+
+          startX = Math.max(0, Math.min(startX, sourceImage.width));
+          endX = Math.max(0, Math.min(endX, sourceImage.width));
+          startY = Math.max(0, Math.min(startY, sourceImage.height));
+          endY = Math.max(0, Math.min(endY, sourceImage.height));
+
+          let rSum = 0, gSum = 0, bSum = 0, aSum = 0, count = 0;
+          for (let y = startY; y < endY; y++) {
+            for (let x = startX; x < endX; x++) {
+              const k = (y * sourceImage.width + x) * 4;
+              rSum += data[k];
+              gSum += data[k + 1];
+              bSum += data[k + 2];
+              aSum += data[k + 3];
+              count++;
+            }
+          }
+
+          if (count === 0 || (aSum / count) < 32) {
+            gridRawColors.push(null);
+          } else {
+            gridRawColors.push({
+              r: Math.round(rSum / count),
+              g: Math.round(gSum / count),
+              b: Math.round(bSum / count),
+              a: aSum / count
+            });
+          }
+        }
       }
+
+      // 结合外围背景过滤逻辑
+      // 为保持原有架构兼容，构造一个临时 Uint8Array 传给外围背景遮罩判断
+      const flatMaskData = new Uint8Array(n * n * 4);
+      for(let i=0; i<n*n; i++){
+        const item = gridRawColors[i];
+        if(item){
+          flatMaskData[i*4] = item.r;
+          flatMaskData[i*4+1] = item.g;
+          flatMaskData[i*4+2] = item.b;
+          flatMaskData[i*4+3] = item.a;
+        } else {
+          flatMaskData[i*4+3] = 0;
+        }
+      }
+      const outerBackground = outerBackgroundMask(flatMaskData, n);
+
+      beadIndices = [];
+      for(let i=0; i<n*n; i++){
+        if (outerBackground[i] || !gridRawColors[i]) {
+          beadIndices.push(null);
+        } else {
+          const {r, g, b} = gridRawColors[i];
+          beadIndices.push(closestPalette(r, g, b, colors));
+        }
+      }
+
       selectedBeadPos = null;
       redrawBeads();
       renderPreviewEditor();
@@ -331,7 +414,7 @@ M1 #BCC6B8|M10 #C5B2BC|M11 #9F7594|M12 #644749|M13 #D19066|M14 #C77362|M15 #757D
       if(!file || !file.type.startsWith('image/')) return;
       const img=new Image(); img.onload=()=>{
         sourceImage=img; $('#sourceImagePreview').src=img.src; $('#sourceImageInfo').textContent=`${img.naturalWidth} × ${img.naturalHeight} 图片将用于生成拼豆图`; $('#sourcePreview').classList.add('show');
-        quantizeSourceImage(); showToast('图片已加载，仅已忽略图像外围的白色/浅灰背景！');
+        quantizeSourceImage(); showToast('图片已加载，轮廓偏差已通过区域块采样优化！');
       }; img.src=URL.createObjectURL(file);
     }
     
