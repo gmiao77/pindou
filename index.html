@@ -14,15 +14,13 @@
     .wrap{max-width:1240px;margin:auto;padding:0 28px 48px}.nav{height:82px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:11px;font:800 27px/1 "Baloo 2",sans-serif;letter-spacing:.5px}.brand-mark{width:43px;height:43px;border-radius:15px;background:linear-gradient(145deg,#ff6ba8,#ff9ac3);display:grid;place-items:center;box-shadow:0 6px 0 #ef4e91;color:#fff;font-size:23px}.brand em{color:var(--pink);font-style:normal}.nav-right{display:flex;gap:10px;align-items:center}.nav-pill{border:0;background:#fff;color:#945776;padding:10px 15px;border-radius:99px;font:600 14px inherit;box-shadow:0 4px 14px #f2d2df80}.avatar{width:37px;height:37px;border:3px solid #fff;border-radius:50%;background:linear-gradient(135deg,#f8c0dc,#be9ff5);box-shadow:0 2px 8px #dca2bb}
     .hero{background:linear-gradient(108deg,#ff70aa 0%,#ff82b6 55%,#c9a5f7 100%);height:220px;border-radius:30px;position:relative;overflow:hidden;padding:34px 42px;color:white;box-shadow:0 15px 25px #de80a250}.hero:after{content:"✦  ✧  ●  ✦  ○";position:absolute;right:45px;top:23px;font-size:40px;letter-spacing:13px;color:#fff8;transform:rotate(-8deg)}.hero h1{font:800 35px/1.1 "Baloo 2",sans-serif;margin:0 0 8px}.hero p{margin:0;opacity:.93;font-size:16px}.bubble{position:absolute;width:88px;height:88px;border-radius:50%;right:79px;bottom:-20px;background:#ffbed9aa;border:7px solid #ffffff66}.bubble.small{width:35px;height:35px;right:187px;bottom:33px;border-width:4px}.star{position:absolute;right:222px;bottom:17px;font-size:42px;color:#fff4a9}
     
-    /* 改为垂直堆叠结构，不再使用 Grid 并列 */
     .workspace{display:flex;flex-direction:column;gap:24px;margin-top:24px}
     .card{background:#ffffffde;border:1px solid #fff;border-radius:25px;box-shadow:0 10px 30px #c5749d1c;padding:28px}
     .section-title{display:flex;align-items:center;justify-content:space-between;margin:0 0 17px;font:800 20px "Baloo 2",sans-serif}.badge{background:#fff0f6;color:#ee5794;border-radius:12px;padding:5px 10px;font:700 12px inherit}
     .dropzone{position:relative;display:flex;gap:18px;align-items:center;min-height:144px;border:2px dashed #f4a8c6;border-radius:20px;background:linear-gradient(135deg,#fff8fb,#fff3f8);padding:20px;transition:.2s}.dropzone.drag{background:#ffe5f0;border-color:#ff69a2;transform:scale(1.01)}.upload-icon{flex:0 0 66px;height:66px;border-radius:21px;display:grid;place-items:center;background:#ffd9e8;color:#ff5a9d;font-size:31px}.dropzone h3{font-size:16px;margin:0 0 6px}.dropzone p{font-size:12px;color:#a98598;margin:0}.file-btn{margin-top:11px;border:0;border-radius:10px;padding:8px 13px;background:#fff;color:#ec5c98;font:700 12px inherit;box-shadow:0 3px 9px #efb7ce;cursor:pointer}.file-btn:hover,.primary:hover{transform:translateY(-1px)}#imageUpload{position:absolute;inset:0;opacity:0;cursor:pointer}
-    .controls{display:flex;align-items:center;gap:14px;margin-top:18px;padding-top:17px;border-top:1px solid #fae5ee;flex-wrap:wrap}.control-label{font-weight:700;font-size:14px;white-space:nowrap}.segmented{display:flex;background:#f8edf3;padding:4px;border-radius:13px;gap:3px}.segmented button{border:0;border-radius:9px;padding:6px 14px;background:transparent;color:#966d81;font:600 12px inherit;cursor:pointer}.segmented button.active{background:#fff;color:#ed4e91;box-shadow:0 2px 7px #d89aaf55}.range{accent-color:#ff5a99;width:300px;max-width:100%}.range-val{color:#f25291;font:800 14px "Baloo 2";min-width:60px}.primary{border:0;border-radius:14px;color:#fff;background:linear-gradient(135deg,#ff5596,#ff76ad);padding:11px 24px;font:800 14px inherit;box-shadow:0 5px 0 #e74685,0 9px 17px #ed79a488;cursor:pointer;transition:.15s;white-space:nowrap;margin-left:auto}
+    .controls{display:flex;align-items:center;gap:14px;margin-top:18px;padding-top:17px;border-top:1px solid #fae5ee;flex-wrap:wrap}.control-label{font-weight:700;font-size:14px;white-space:nowrap}.segmented{display:flex;background:#f8edf3;padding:4px;border-radius:13px;gap:3px}.segmented button{border:0;border-radius:9px;padding:6px 12px;background:transparent;color:#966d81;font:600 12px inherit;cursor:pointer}.segmented button.active{background:#fff;color:#ed4e91;box-shadow:0 2px 7px #d89aaf55}.range{accent-color:#ff5a99;width:240px;max-width:100%}.range-val{color:#f25291;font:800 14px "Baloo 2";min-width:60px}.primary{border:0;border-radius:14px;color:#fff;background:linear-gradient(135deg,#ff5596,#ff76ad);padding:11px 24px;font:800 14px inherit;box-shadow:0 5px 0 #e74685,0 9px 17px #ed79a488;cursor:pointer;transition:.15s;white-space:nowrap;margin-left:auto}
     
     .preview-card{padding:28px}
-    /* 预览区高度提升到 600px，提供更宽广的可视范围 */
     .canvas-wrap{height:600px; width:100%; border-radius:20px; background:#f7f7f9; overflow:auto; position:relative; scrollbar-width:thin; scrollbar-color:#f4d5e2 transparent; border: 1px solid #f2e1e8;}
     .canvas-wrap::-webkit-scrollbar{width:8px; height:8px;}
     .canvas-wrap::-webkit-scrollbar-thumb{background:#f4d5e2; border-radius:10px;}
@@ -56,7 +54,7 @@
       .upload-icon{width:48px;flex-basis:48px;height:48px;font-size:22px}
       .dropzone h3{font-size:14px}
       .controls{flex-direction:column;align-items:stretch;gap:12px;padding-top:14px}
-      .segmented{width:100%;justify-content:space-between}.segmented button{flex:1;padding:8px 10px}
+      .segmented{width:100%;justify-content:space-between}.segmented button{flex:1;padding:8px 6px;font-size:11px}
       .range{width:100%}.primary{width:100%;margin-left:0}
       .canvas-wrap{height:400px;padding:10px}
       .preview-actions{flex-wrap:wrap}.preview-actions button{max-width:none;min-width:calc(50% - 6px);padding:12px}
@@ -83,7 +81,14 @@
         <div class="source-preview" id="sourcePreview" aria-live="polite"><img id="sourceImagePreview" alt="原始上传图片预览"><div><b>原始图片预览</b><span id="sourceImageInfo">将以此图片生成拼豆图</span><span class="source-note">仅图像外围白色 / 浅灰背景不会计入拼豆</span></div></div>
         <div class="controls">
           <span class="control-label">拼豆尺寸</span>
-          <div class="segmented" id="sizeButtons"><button data-size="26" class="active">迷你</button><button data-size="52">标准</button><button data-size="104">精细</button></div>
+          <!-- 改为 5 个档位：26, 36, 52, 78, 104 -->
+          <div class="segmented" id="sizeButtons">
+            <button data-size="26" class="active">26格</button>
+            <button data-size="36">36格</button>
+            <button data-size="52">52格</button>
+            <button data-size="78">78格</button>
+            <button data-size="104">104格</button>
+          </div>
           <span class="control-label">颗粒密度</span>
           <input class="range" id="density" type="range" min="26" max="104" value="26"><span class="range-val" id="densityVal">26 × 26</span>
           <button class="primary" id="generateBtn">生成拼豆图 ✦</button>
@@ -121,7 +126,6 @@ G1 #FFE2CE|G10 #D98C39|G11 #E0C593|G12 #FFC890|G13 #B7714A|G14 #8D614C|G15 #FCF9
 H1 #FDFBFF|H10 #EEE9EA|H11 #CECDD5|H12 #FFF5ED|H13 #F5ECD2|H14 #CFD7D3|H15 #98A6A8|H16 #1D1414|H17 #F1EDED|H18 #FFFDF0|H19 #F6EFE2|H2 #FEFFFF|H20 #949FA3|H21 #FFFBE1|H22 #CACAD4|H23 #9A9D94|H3 #B6B1BA|H4 #89858C|H5 #48464E|H6 #2F2B2F|H7 #000000|H8 #E7D6DB|H9 #EDEDED
 M1 #BCC6B8|M10 #C5B2BC|M11 #9F7594|M12 #644749|M13 #D19066|M14 #C77362|M15 #757D78|M2 #8AA386|M3 #697D80|M4 #E3D2BC|M5 #D0CCAA|M6 #B0A782|M7 #B4A497|M8 #B38281|M9 #A58767`.replace(/\s*\n\s*/g,'|').split('|').map(entry=>{const [id,color]=entry.trim().split(/\s+/);return {id,name:id,color}});
     
-    // 基础视觉基准尺寸，与密度解绑
     const BASE_VISUAL_SIZE = 780; 
     const BEAD_RENDER_SIZE = 30;
     
