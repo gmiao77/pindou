@@ -13,50 +13,59 @@
     body:before, body:after{content:"";position:fixed;z-index:-1;border-radius:50%;filter:blur(1px);opacity:.55} body:before{width:440px;height:440px;background:#ffd4e5;top:-180px;left:-100px} body:after{width:440px;height:440px;background:#e3d8ff;right:-100px;bottom:-150px}
     .wrap{max-width:1240px;margin:auto;padding:0 28px 48px}.nav{height:82px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:11px;font:800 27px/1 "Baloo 2",sans-serif;letter-spacing:.5px}.brand-mark{width:43px;height:43px;border-radius:15px;background:linear-gradient(145deg,#ff6ba8,#ff9ac3);display:grid;place-items:center;box-shadow:0 6px 0 #ef4e91;color:#fff;font-size:23px}.brand em{color:var(--pink);font-style:normal}.nav-right{display:flex;gap:10px;align-items:center}.nav-pill{border:0;background:#fff;color:#945776;padding:10px 15px;border-radius:99px;font:600 14px inherit;box-shadow:0 4px 14px #f2d2df80}.avatar{width:37px;height:37px;border:3px solid #fff;border-radius:50%;background:linear-gradient(135deg,#f8c0dc,#be9ff5);box-shadow:0 2px 8px #dca2bb}
     .hero{background:linear-gradient(108deg,#ff70aa 0%,#ff82b6 55%,#c9a5f7 100%);height:220px;border-radius:30px;position:relative;overflow:hidden;padding:34px 42px;color:white;box-shadow:0 15px 25px #de80a250}.hero:after{content:"✦  ✧  ●  ✦  ○";position:absolute;right:45px;top:23px;font-size:40px;letter-spacing:13px;color:#fff8;transform:rotate(-8deg)}.hero h1{font:800 35px/1.1 "Baloo 2",sans-serif;margin:0 0 8px}.hero p{margin:0;opacity:.93;font-size:16px}.bubble{position:absolute;width:88px;height:88px;border-radius:50%;right:79px;bottom:-20px;background:#ffbed9aa;border:7px solid #ffffff66}.bubble.small{width:35px;height:35px;right:187px;bottom:33px;border-width:4px}.star{position:absolute;right:222px;bottom:17px;font-size:42px;color:#fff4a9}
-    .workspace{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;margin-top:24px}.card{background:#ffffffde;border:1px solid #fff;border-radius:25px;box-shadow:0 10px 30px #c5749d1c;padding:24px}.section-title{display:flex;align-items:center;justify-content:space-between;margin:0 0 17px;font:800 20px "Baloo 2",sans-serif}.badge{background:#fff0f6;color:#ee5794;border-radius:12px;padding:5px 10px;font:700 12px inherit}
-    .dropzone{position:relative;display:flex;gap:18px;align-items:center;min-height:144px;border:2px dashed #f4a8c6;border-radius:20px;background:linear-gradient(135deg,#fff8fb,#fff3f8);padding:20px;transition:.2s}.dropzone.drag{background:#ffe5f0;border-color:#ff69a2;transform:scale(1.01)}.upload-icon{flex:0 0 66px;height:66px;border-radius:21px;display:grid;place-items:center;background:#ffd9e8;color:#ff5a9d;font-size:31px}.dropzone h3{font-size:16px;margin:0 0 6px}.dropzone p{font-size:12px;color:#a98598;margin:0}.file-btn{margin-top:11px;border:0;border-radius:10px;padding:8px 13px;background:#fff;color:#ec5c98;font:700 12px inherit;box-shadow:0 3px 9px #efb7ce;cursor:pointer}.file-btn:hover,.primary:hover{transform:translateY(-1px)}#imageUpload{position:absolute;inset:0;opacity:0;cursor:pointer}
-    .controls{display:flex;align-items:center;gap:14px;margin-top:18px;padding-top:17px;border-top:1px solid #fae5ee}.control-label{font-weight:700;font-size:14px;white-space:nowrap}.segmented{display:flex;background:#f8edf3;padding:4px;border-radius:13px;gap:3px}.segmented button{border:0;border-radius:9px;padding:6px 10px;background:transparent;color:#966d81;font:600 12px inherit;cursor:pointer}.segmented button.active{background:#fff;color:#ed4e91;box-shadow:0 2px 7px #d89aaf55}.range{accent-color:#ff5a99;width:100%}.range-val{color:#f25291;font:800 14px "Baloo 2"}.primary{border:0;border-radius:14px;color:#fff;background:linear-gradient(135deg,#ff5596,#ff76ad);padding:11px 18px;font:800 14px inherit;box-shadow:0 5px 0 #e74685,0 9px 17px #ed79a488;cursor:pointer;transition:.15s;white-space:nowrap}
     
-    .preview-card{padding:22px}
-    .canvas-wrap{height:400px; width:100%; border-radius:16px; background:#f7f7f9; overflow:auto; position:relative; scrollbar-width:thin; scrollbar-color:#f4d5e2 transparent;}
+    /* 改为垂直堆叠结构，不再使用 Grid 并列 */
+    .workspace{display:flex;flex-direction:column;gap:24px;margin-top:24px}
+    .card{background:#ffffffde;border:1px solid #fff;border-radius:25px;box-shadow:0 10px 30px #c5749d1c;padding:28px}
+    .section-title{display:flex;align-items:center;justify-content:space-between;margin:0 0 17px;font:800 20px "Baloo 2",sans-serif}.badge{background:#fff0f6;color:#ee5794;border-radius:12px;padding:5px 10px;font:700 12px inherit}
+    .dropzone{position:relative;display:flex;gap:18px;align-items:center;min-height:144px;border:2px dashed #f4a8c6;border-radius:20px;background:linear-gradient(135deg,#fff8fb,#fff3f8);padding:20px;transition:.2s}.dropzone.drag{background:#ffe5f0;border-color:#ff69a2;transform:scale(1.01)}.upload-icon{flex:0 0 66px;height:66px;border-radius:21px;display:grid;place-items:center;background:#ffd9e8;color:#ff5a9d;font-size:31px}.dropzone h3{font-size:16px;margin:0 0 6px}.dropzone p{font-size:12px;color:#a98598;margin:0}.file-btn{margin-top:11px;border:0;border-radius:10px;padding:8px 13px;background:#fff;color:#ec5c98;font:700 12px inherit;box-shadow:0 3px 9px #efb7ce;cursor:pointer}.file-btn:hover,.primary:hover{transform:translateY(-1px)}#imageUpload{position:absolute;inset:0;opacity:0;cursor:pointer}
+    .controls{display:flex;align-items:center;gap:14px;margin-top:18px;padding-top:17px;border-top:1px solid #fae5ee;flex-wrap:wrap}.control-label{font-weight:700;font-size:14px;white-space:nowrap}.segmented{display:flex;background:#f8edf3;padding:4px;border-radius:13px;gap:3px}.segmented button{border:0;border-radius:9px;padding:6px 14px;background:transparent;color:#966d81;font:600 12px inherit;cursor:pointer}.segmented button.active{background:#fff;color:#ed4e91;box-shadow:0 2px 7px #d89aaf55}.range{accent-color:#ff5a99;width:300px;max-width:100%}.range-val{color:#f25291;font:800 14px "Baloo 2";min-width:60px}.primary{border:0;border-radius:14px;color:#fff;background:linear-gradient(135deg,#ff5596,#ff76ad);padding:11px 24px;font:800 14px inherit;box-shadow:0 5px 0 #e74685,0 9px 17px #ed79a488;cursor:pointer;transition:.15s;white-space:nowrap;margin-left:auto}
+    
+    .preview-card{padding:28px}
+    /* 预览区高度提升到 600px，提供更宽广的可视范围 */
+    .canvas-wrap{height:600px; width:100%; border-radius:20px; background:#f7f7f9; overflow:auto; position:relative; scrollbar-width:thin; scrollbar-color:#f4d5e2 transparent; border: 1px solid #f2e1e8;}
     .canvas-wrap::-webkit-scrollbar{width:8px; height:8px;}
     .canvas-wrap::-webkit-scrollbar-thumb{background:#f4d5e2; border-radius:10px;}
     .canvas-wrap:before{content:"";position:absolute;inset:0;background-image:radial-gradient(#f4d5e2 1px,transparent 1px);background-size:14px 14px;opacity:.45;pointer-events:none}
-    #beadCanvas{position:relative; z-index:1; display:block; margin:auto; image-rendering:auto; filter:drop-shadow(0 4px 6px #c987a822); cursor:crosshair;}
+    #beadCanvas{position:relative; z-index:1; display:block; margin:auto; image-rendering:auto; filter:drop-shadow(0 4px 8px #c987a822); cursor:crosshair;}
     
-    .canvas-label{position:absolute;z-index:2;bottom:12px;right:14px;border-radius:8px;background:#fff;padding:5px 8px;color:#aa7891;font-size:11px;box-shadow:0 2px 7px #dda5bb55; pointer-events:none;}
-    .preview-actions{display:flex;gap:10px;margin-top:17px}.outline{flex:1;border:1px solid #f3b2cc;background:white;color:#e85791;border-radius:12px;font:700 13px inherit;padding:10px;cursor:pointer}.outline:hover{background:#fff3f7}.stat{background:#fdf0f6;border-radius:12px;padding:7px 10px;font-size:12px;color:#9f7087;white-space:nowrap}.stat b{font-size:16px;color:#ec5995}
+    .canvas-label{position:absolute;z-index:2;bottom:16px;right:18px;border-radius:10px;background:#ffffffcc;backdrop-filter:blur(4px);padding:6px 10px;color:#aa7891;font-size:12px;box-shadow:0 4px 12px #dda5bb44; pointer-events:none;}
+    .preview-actions{display:flex;gap:12px;margin-top:20px}.outline{flex:1;border:1px solid #f3b2cc;background:white;color:#e85791;border-radius:12px;font:700 14px inherit;padding:12px;cursor:pointer;max-width:200px}.outline:hover{background:#fff3f7}.stat{background:#fdf0f6;border-radius:12px;padding:7px 12px;font-size:13px;color:#9f7087;white-space:nowrap}.stat b{font-size:17px;color:#ec5995}
     
-    .preview-editor{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:13px;padding:12px 14px;background:#fff1f6;border-radius:13px;font-size:13px; min-height:58px;}
-    .preview-editor.empty{color:#946e80; font-size:12px; justify-content:center;}
-    .preview-editor b{color:#e54e8b; font-size:15px; min-width:32px;}
-    .color-inputs{display:flex; align-items:center; gap:8px;}
-    .color-inputs input[type="color"]{width:36px; height:36px; border:0; background:transparent; padding:0; cursor:pointer;}
-    .color-inputs input[type="text"]{width:75px; padding:6px 8px; border:1px solid #f4d5e2; border-radius:8px; font:600 13px "Baloo 2",sans-serif; color:#5a3153; outline:none; text-transform:uppercase;}
+    .preview-editor{display:flex;align-items:center;flex-wrap:wrap;gap:16px;margin-top:16px;padding:16px 20px;background:#fff1f6;border-radius:16px;font-size:14px; min-height:64px;}
+    .preview-editor.empty{color:#946e80; font-size:13px; justify-content:center;}
+    .preview-editor b{color:#e54e8b; font-size:17px; min-width:32px;}
+    .color-inputs{display:flex; align-items:center; gap:10px;}
+    .color-inputs input[type="color"]{width:40px; height:40px; border:0; background:transparent; padding:0; cursor:pointer;}
+    .color-inputs input[type="text"]{width:85px; padding:8px 10px; border:1px solid #f4d5e2; border-radius:10px; font:600 14px "Baloo 2",sans-serif; color:#5a3153; outline:none; text-transform:uppercase;}
     .color-inputs input[type="text"]:focus{border-color:#ff6da8; box-shadow:0 0 0 2px #ff6da833;}
-    .hint{font-size:11px; color:#a67c91;}
+    .hint{font-size:12px; color:#a67c91;}
 
-    .source-preview{display:none;align-items:center;gap:14px;margin-top:14px;padding:12px;background:#fff6fa;border:1px solid #f7dbe7;border-radius:15px}.source-preview.show{display:flex}.source-preview img{width:104px;height:104px;object-fit:contain;background:#f7f7f9;border-radius:11px}.source-preview b{font-size:13px}.source-preview span{display:block;color:#a67c91;font-size:11px;margin-top:3px}.source-preview .source-note{display:inline-block;margin-top:8px;padding:4px 7px;background:#fff;border-radius:8px;color:#e85791;font-weight:700}.zoom-control{display:flex;align-items:center;gap:8px;margin-top:14px;color:#946e80;font-size:13px}.zoom-control input{flex:1;accent-color:#ff5a99}.zoom-control b{color:#e85791;min-width:42px}
-    .bottom{margin-top:22px}.legend-item{display:flex;align-items:center;gap:6px;background:#fff6f9;border-radius:10px;padding:7px 9px;font-size:11px;color:#8d6277}.dot{width:12px;height:12px;border-radius:4px;box-shadow:inset 0 -2px #0002}.count-table{width:100%;border-collapse:collapse;font-size:13px}.count-table th{text-align:left;color:#b18a9d;font-size:11px;padding:0 0 10px}.count-table td{padding:9px 0;border-top:1px dashed #f2dbe5}.code{font:800 13px "Baloo 2";color:#6b3d61}.total{margin-top:13px;border-radius:14px;background:linear-gradient(100deg,#fff0f6,#f8f0ff);padding:12px;display:flex;align-items:center;justify-content:space-between;font-size:13px}.total strong{font:800 22px "Baloo 2";color:#f05191}.toast{position:fixed;bottom:25px;left:50%;transform:translate(-50%,100px);background:#5d3858;color:#fff;border-radius:99px;padding:11px 18px;font-size:13px;box-shadow:0 8px 20px #4a234644;transition:.25s;z-index:10}.toast.show{transform:translate(-50%,0)}
+    .source-preview{display:none;align-items:center;gap:14px;margin-top:16px;padding:14px;background:#fff6fa;border:1px solid #f7dbe7;border-radius:16px}.source-preview.show{display:flex}.source-preview img{width:120px;height:120px;object-fit:contain;background:#f7f7f9;border-radius:12px}.source-preview b{font-size:14px}.source-preview span{display:block;color:#a67c91;font-size:12px;margin-top:4px}.source-preview .source-note{display:inline-block;margin-top:8px;padding:5px 9px;background:#fff;border-radius:8px;color:#e85791;font-weight:700}.zoom-control{display:flex;align-items:center;gap:10px;margin-top:18px;color:#946e80;font-size:14px}.zoom-control input{flex:1;max-width:300px;accent-color:#ff5a99}.zoom-control b{color:#e85791;min-width:42px}
     
-    @media(max-width:850px){.workspace{grid-template-columns:1fr}.hero{height:190px}}
+    .legend-item{display:flex;align-items:center;gap:6px;background:#fff6f9;border-radius:10px;padding:7px 9px;font-size:12px;color:#8d6277}.dot{width:12px;height:12px;border-radius:4px;box-shadow:inset 0 -2px #0002}.count-table{width:100%;border-collapse:collapse;font-size:14px}.count-table th{text-align:left;color:#b18a9d;font-size:12px;padding:0 0 12px}.count-table td{padding:10px 0;border-top:1px dashed #f2dbe5}.code{font:800 14px "Baloo 2";color:#6b3d61}.total{margin-top:16px;border-radius:16px;background:linear-gradient(100deg,#fff0f6,#f8f0ff);padding:16px 20px;display:flex;align-items:center;justify-content:space-between;font-size:14px}.total strong{font:800 24px "Baloo 2";color:#f05191}.toast{position:fixed;bottom:25px;left:50%;transform:translate(-50%,100px);background:#5d3858;color:#fff;border-radius:99px;padding:12px 22px;font-size:14px;box-shadow:0 8px 20px #4a234644;transition:.25s;z-index:10}.toast.show{transform:translate(-50%,0)}
+    
+    @media(max-width:850px){
+      .hero{height:190px}
+    }
     @media(max-width:560px){
       .wrap{padding:0 12px 26px}.nav{height:68px}.nav-pill{display:none}
       .hero{padding:28px 22px;height:175px}.hero h1{font-size:27px}
       .workspace{margin-top:15px;gap:15px}.card{padding:18px;border-radius:20px}
       .dropzone{min-height:120px;padding:14px;flex-direction:column;text-align:center;gap:10px}
       .upload-icon{width:48px;flex-basis:48px;height:48px;font-size:22px}
-      .dropzone h3{font-size:14px}.controls{flex-wrap:wrap;gap:12px;padding-top:14px}
+      .dropzone h3{font-size:14px}
+      .controls{flex-direction:column;align-items:stretch;gap:12px;padding-top:14px}
       .segmented{width:100%;justify-content:space-between}.segmented button{flex:1;padding:8px 10px}
-      .range{width:calc(100% - 68px)}.primary{width:100%}
-      .canvas-wrap{height:360px;padding:10px}
-      .preview-actions{flex-wrap:wrap}.preview-actions button{min-width:calc(50% - 5px);padding:12px}
+      .range{width:100%}.primary{width:100%;margin-left:0}
+      .canvas-wrap{height:400px;padding:10px}
+      .preview-actions{flex-wrap:wrap}.preview-actions button{max-width:none;min-width:calc(50% - 6px);padding:12px}
       .preview-editor{flex-direction:column;align-items:flex-start;gap:10px}
       .color-inputs{width:100%;justify-content:space-between}
       .color-inputs input[type="text"]{flex:1;margin-left:8px}
       .source-preview{flex-direction:column;align-items:center;text-align:center}
       .source-preview img{width:100%;max-width:140px;height:auto}
-      .count-table{font-size:12px}.count-table td{padding:7px 0}
+      .count-table{font-size:12px}.count-table td{padding:8px 0}
       .total{flex-direction:column;gap:8px;text-align:center}.total strong{font-size:24px}
     }
   </style>
@@ -65,15 +74,25 @@
   <main class="wrap">
     <nav class="nav"><div class="brand"><span class="brand-mark">✿</span>豆豆<em>魔法屋</em></div><div class="nav-right"><button class="nav-pill">我的作品 ✦</button><button class="nav-pill">使用指南</button><span class="avatar"></span></div></nav>
     <section class="hero"><h1>把灵感，变成一颗颗小豆豆 ✨</h1><p>上传喜欢的图片，一键生成专属拼豆图纸吧！</p><span class="bubble"></span><span class="bubble small"></span><span class="star">✦</span></section>
-    <section class="workspace">
-      <div class="card">
+    
+    <div class="workspace">
+      <!-- 第1步：设置区 -->
+      <section class="card">
         <h2 class="section-title">① 上传图片 <span class="badge">开始创作</span></h2>
-        <label class="dropzone" id="dropzone"><div class="upload-icon">☁</div><div><h3>拖入图片，或点击这里上传</h3><p>支持 JPG、PNG、WEBP 格式，建议使用主体清晰的图片</p><button type="button" class="file-btn">选择一张图片</button></div><input id="imageUpload" type="file" accept="image/*"></label><div class="source-preview" id="sourcePreview" aria-live="polite"><img id="sourceImagePreview" alt="原始上传图片预览"><div><b>原始图片预览</b><span id="sourceImageInfo">将以此图片生成拼豆图</span><span class="source-note">仅图像外围白色 / 浅灰背景不会计入拼豆</span></div></div>
-        <div class="controls"><span class="control-label">拼豆尺寸</span><div class="segmented" id="sizeButtons"><button data-size="26" class="active">迷你</button><button data-size="52">标准</button><button data-size="104">精细</button></div><span class="control-label">颗粒密度</span><input class="range" id="density" type="range" min="26" max="104" value="26"><span class="range-val" id="densityVal">26 × 26</span><button class="primary" id="generateBtn">生成拼豆图 ✦</button></div>
-      </div>
-      <div class="card preview-card">
-        <h2 class="section-title">② 拼豆预览 <span class="stat">共 <b id="beadTotal">676</b> 颗</span></h2>
-        <!-- 外部固定高度大小、内部靠 Zoom 属性缩放 -->
+        <label class="dropzone" id="dropzone"><div class="upload-icon">☁</div><div><h3>拖入图片，或点击这里上传</h3><p>支持 JPG、PNG、WEBP 格式，建议使用主体清晰的图片</p><button type="button" class="file-btn">选择一张图片</button></div><input id="imageUpload" type="file" accept="image/*"></label>
+        <div class="source-preview" id="sourcePreview" aria-live="polite"><img id="sourceImagePreview" alt="原始上传图片预览"><div><b>原始图片预览</b><span id="sourceImageInfo">将以此图片生成拼豆图</span><span class="source-note">仅图像外围白色 / 浅灰背景不会计入拼豆</span></div></div>
+        <div class="controls">
+          <span class="control-label">拼豆尺寸</span>
+          <div class="segmented" id="sizeButtons"><button data-size="26" class="active">迷你</button><button data-size="52">标准</button><button data-size="104">精细</button></div>
+          <span class="control-label">颗粒密度</span>
+          <input class="range" id="density" type="range" min="26" max="104" value="26"><span class="range-val" id="densityVal">26 × 26</span>
+          <button class="primary" id="generateBtn">生成拼豆图 ✦</button>
+        </div>
+      </section>
+
+      <!-- 第2步：大视野预览及编辑区 -->
+      <section class="card preview-card">
+        <h2 class="section-title">② 拼豆预览及修改 <span class="stat">共 <b id="beadTotal">676</b> 颗</span></h2>
         <div class="canvas-wrap">
             <canvas id="beadCanvas"></canvas>
             <span class="canvas-label">拖动浏览 · 点击色号可单点替换</span>
@@ -81,11 +100,15 @@
         <div class="zoom-control"><span>预览缩放</span><input id="previewZoom" type="range" min="30" max="250" value="72" aria-label="预览缩放"><b id="zoomValue">72%</b></div>
         <div class="preview-editor empty" id="previewEditor"><span>点击拼豆预览中的圆形色号，即可替换该拼豆颜色</span></div>
         <div class="preview-actions"><button class="outline" id="downloadBtn">⇩ 保存图纸</button><button class="outline" id="randomBtn">↻ 重新生成</button></div>
-      </div>
-    </section>
-    <section class="bottom">
-      <div class="card"><h2 class="section-title">③ 色号用量清单 <span class="badge">准备材料</span></h2><table class="count-table"><thead><tr><th>拼豆色号</th><th>颜色</th><th>数量</th></tr></thead><tbody id="countBody"></tbody></table><div class="total"><span>预计需要拼豆</span><strong id="totalBottom">676 颗</strong><span>建议多备 5%</span></div></div>
-    </section>
+      </section>
+
+      <!-- 第3步：材料区 -->
+      <section class="card">
+        <h2 class="section-title">③ 色号用量清单 <span class="badge">准备材料</span></h2>
+        <table class="count-table"><thead><tr><th>拼豆色号</th><th>颜色</th><th>数量</th></tr></thead><tbody id="countBody"></tbody></table>
+        <div class="total"><span>预计需要拼豆</span><strong id="totalBottom">676 颗</strong><span>建议多备 5%</span></div>
+      </section>
+    </div>
   </main><div class="toast" id="toast"></div>
   <script>
     const palettes = `A1 #FAF4C8|A10 #F77C31|A11 #FFDD99|A12 #FE9F72|A13 #FFC365|A14 #FD543D|A15 #FFF365|A16 #FFFF9F|A17 #FFE36E|A18 #FEBE7D|A19 #FD7C72|A2 #FFFFD5|A20 #FFD568|A21 #FFE395|A22 #F4F57D|A23 #E6C9B7|A24 #F7F8A2|A25 #FFD67D|A26 #FFC830|A3 #FEFF8B|A4 #FBED56|A5 #F4D738|A6 #FEAC4C|A7 #FE8B4C|A8 #FFDA45|A9 #FF995B
@@ -98,7 +121,7 @@ G1 #FFE2CE|G10 #D98C39|G11 #E0C593|G12 #FFC890|G13 #B7714A|G14 #8D614C|G15 #FCF9
 H1 #FDFBFF|H10 #EEE9EA|H11 #CECDD5|H12 #FFF5ED|H13 #F5ECD2|H14 #CFD7D3|H15 #98A6A8|H16 #1D1414|H17 #F1EDED|H18 #FFFDF0|H19 #F6EFE2|H2 #FEFFFF|H20 #949FA3|H21 #FFFBE1|H22 #CACAD4|H23 #9A9D94|H3 #B6B1BA|H4 #89858C|H5 #48464E|H6 #2F2B2F|H7 #000000|H8 #E7D6DB|H9 #EDEDED
 M1 #BCC6B8|M10 #C5B2BC|M11 #9F7594|M12 #644749|M13 #D19066|M14 #C77362|M15 #757D78|M2 #8AA386|M3 #697D80|M4 #E3D2BC|M5 #D0CCAA|M6 #B0A782|M7 #B4A497|M8 #B38281|M9 #A58767`.replace(/\s*\n\s*/g,'|').split('|').map(entry=>{const [id,color]=entry.trim().split(/\s+/);return {id,name:id,color}});
     
-    // 基础视觉基准尺寸，与密度（26、52、104）解绑
+    // 基础视觉基准尺寸，与密度解绑
     const BASE_VISUAL_SIZE = 780; 
     const BEAD_RENDER_SIZE = 30;
     
@@ -128,10 +151,8 @@ M1 #BCC6B8|M10 #C5B2BC|M11 #9F7594|M12 #644749|M13 #D19066|M14 #C77362|M15 #757D
 
     function redrawBeads(){
       const renderSize = size * BEAD_RENDER_SIZE;
-      // 物理像素尺寸跟随密度变化，保证高清
       canvas.width = renderSize; canvas.height = renderSize;
       
-      // CSS尺寸永远锚定固定的 BASE_VISUAL_SIZE 基础，仅通过 Zoom 缩放控制，不会越变越大
       canvas.style.width = `${BASE_VISUAL_SIZE * previewZoom / 100}px`; 
       canvas.style.height = `${BASE_VISUAL_SIZE * previewZoom / 100}px`;
       
@@ -144,7 +165,6 @@ M1 #BCC6B8|M10 #C5B2BC|M11 #9F7594|M12 #644749|M13 #D19066|M14 #C77362|M15 #757D
         drawBead(x,y,cell,palettes[paletteIndex]);
       });
 
-      // 绘制单颗选中拼豆的光环
       if (selectedBeadPos !== null && beadIndices[selectedBeadPos] !== null && beadIndices[selectedBeadPos] !== undefined) {
         const x = (selectedBeadPos % size) * cell;
         const y = Math.floor(selectedBeadPos / size) * cell;
@@ -247,7 +267,6 @@ M1 #BCC6B8|M10 #C5B2BC|M11 #9F7594|M12 #644749|M13 #D19066|M14 #C77362|M15 #757D
       }
       const palette = palettes[beadIndices[selectedBeadPos]];
       panel.classList.remove('empty');
-      // 补全替换颜色功能：色盘 + 色号输入框
       panel.innerHTML=`
         <span>正在替换该单颗拼豆</span><b id="editorPalId">${palette.id}</b>
         <div class="color-inputs">
@@ -260,7 +279,6 @@ M1 #BCC6B8|M10 #C5B2BC|M11 #9F7594|M12 #644749|M13 #D19066|M14 #C77362|M15 #757D
       const updateColor = (val, isFromPicker) => {
         const hex = val.toUpperCase();
         if(/^#[0-9A-F]{6}$/i.test(hex)){
-          // 查找是否已存在该颜色，没有就动态创建 DIY 色号，这样就只对当前这一颗拼豆进行修改
           let newIndex = palettes.findIndex(p => p.color === hex);
           if (newIndex === -1) {
               newIndex = palettes.length;
@@ -290,7 +308,6 @@ M1 #BCC6B8|M10 #C5B2BC|M11 #9F7594|M12 #644749|M13 #D19066|M14 #C77362|M15 #757D
     $('#density').oninput=e=>setSize(+e.target.value);
     $('#sizeButtons').onclick=e=>{if(e.target.tagName==='BUTTON') setSize(+e.target.dataset.size);};
     
-    // 画布点击选中单颗拼豆逻辑
     canvas.addEventListener('click',event=>{
       const rect=canvas.getBoundingClientRect();
       const x = Math.floor((event.clientX - rect.left) * size / rect.width);
@@ -301,7 +318,7 @@ M1 #BCC6B8|M10 #C5B2BC|M11 #9F7594|M12 #644749|M13 #D19066|M14 #C77362|M15 #757D
       if(index === null || index === undefined){showToast('这里是图像外围背景，不计入拼豆数量');return;}
       
       selectedBeadPos = pos; 
-      redrawBeads(); // 重绘为了显示高亮光环
+      redrawBeads(); 
       renderPreviewEditor(); 
       showToast(`已选中这颗拼豆 (${palettes[index].id})，可在下方修改独立颜色`);
     });
