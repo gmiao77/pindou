@@ -16,9 +16,9 @@
     .workspace{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;margin-top:24px}.card{background:#ffffffde;border:1px solid #fff;border-radius:25px;box-shadow:0 10px 30px #c5749d1c;padding:24px}.section-title{display:flex;align-items:center;justify-content:space-between;margin:0 0 17px;font:800 20px "Baloo 2",sans-serif}.badge{background:#fff0f6;color:#ee5794;border-radius:12px;padding:5px 10px;font:700 12px inherit}
     .dropzone{position:relative;display:flex;gap:18px;align-items:center;min-height:144px;border:2px dashed #f4a8c6;border-radius:20px;background:linear-gradient(135deg,#fff8fb,#fff3f8);padding:20px;transition:.2s}.dropzone.drag{background:#ffe5f0;border-color:#ff69a2;transform:scale(1.01)}.upload-icon{flex:0 0 66px;height:66px;border-radius:21px;display:grid;place-items:center;background:#ffd9e8;color:#ff5a9d;font-size:31px}.dropzone h3{font-size:16px;margin:0 0 6px}.dropzone p{font-size:12px;color:#a98598;margin:0}.file-btn{margin-top:11px;border:0;border-radius:10px;padding:8px 13px;background:#fff;color:#ec5c98;font:700 12px inherit;box-shadow:0 3px 9px #efb7ce}.file-btn:hover,.primary:hover{transform:translateY(-1px)}#imageUpload{position:absolute;inset:0;opacity:0;cursor:pointer}
     .controls{display:flex;align-items:center;gap:14px;margin-top:18px;padding-top:17px;border-top:1px solid #fae5ee}.control-label{font-weight:700;font-size:14px;white-space:nowrap}.segmented{display:flex;background:#f8edf3;padding:4px;border-radius:13px;gap:3px}.segmented button{border:0;border-radius:9px;padding:6px 10px;background:transparent;color:#966d81;font:600 12px inherit;cursor:pointer}.segmented button.active{background:#fff;color:#ed4e91;box-shadow:0 2px 7px #d89aaf55}.range{accent-color:#ff5a99;width:100%}.range-val{color:#f25291;font:800 14px "Baloo 2"}.primary{border:0;border-radius:14px;color:#fff;background:linear-gradient(135deg,#ff5596,#ff76ad);padding:11px 18px;font:800 14px inherit;box-shadow:0 5px 0 #e74685,0 9px 17px #ed79a488;cursor:pointer;transition:.15s;white-space:nowrap}
-    .preview-card{padding:22px}.canvas-wrap{height:388px;border-radius:20px;background:#f7f7f9;display:grid;place-items:center;overflow:hidden;position:relative}.canvas-wrap:before{content:"";position:absolute;inset:0;background-image:radial-gradient(#f4d5e2 1px,transparent 1px);background-size:14px 14px;opacity:.45}#beadCanvas{position:relative;z-index:1;max-width:95%;max-height:95%;image-rendering:auto;filter:drop-shadow(0 8px 7px #c987a844);cursor:pointer}.canvas-label{position:absolute;z-index:2;bottom:12px;right:14px;border-radius:8px;background:#fff;padding:5px 8px;color:#aa7891;font-size:11px;box-shadow:0 2px 7px #dda5bb55}.preview-actions{display:flex;gap:10px;margin-top:17px}.outline{flex:1;border:1px solid #f3b2cc;background:white;color:#e85791;border-radius:12px;font:700 13px inherit;padding:10px;cursor:pointer}.outline:hover{background:#fff3f7}.stat{background:#fdf0f6;border-radius:12px;padding:7px 10px;font-size:12px;color:#9f7087;white-space:nowrap}.stat b{font-size:16px;color:#ec5995}.preview-editor{display:flex;align-items:center;gap:9px;margin-top:13px;padding:10px 12px;background:#fff1f6;border-radius:13px;font-size:12px}.preview-editor b{color:#e54e8b}.preview-editor input{width:30px;height:30px;border:0;background:transparent;padding:0}.source-preview{display:none;align-items:center;gap:14px;margin-top:14px;padding:12px;background:#fff6fa;border:1px solid #f7dbe7;border-radius:15px}.source-preview.show{display:flex}.source-preview img{width:104px;height:104px;object-fit:contain;background:#f7f7f9;border-radius:11px}.source-preview b{font-size:13px}.source-preview span{display:block;color:#a67c91;font-size:11px;margin-top:3px}.source-preview .source-note{display:inline-block;margin-top:8px;padding:4px 7px;background:#fff;border-radius:8px;color:#e85791;font-weight:700}.preview-editor.empty{color:#946e80}
+    .preview-card{padding:22px}.canvas-wrap{height:388px;border-radius:20px;background:#f7f7f9;overflow:auto;position:relative;padding:14px}.canvas-wrap:before{content:"";position:absolute;inset:0;background-image:radial-gradient(#f4d5e2 1px,transparent 1px);background-size:14px 14px;opacity:.45;pointer-events:none}#beadCanvas{position:relative;z-index:1;display:block;margin:auto;image-rendering:auto;filter:drop-shadow(0 8px 7px #c987a844);cursor:pointer}.canvas-label{position:absolute;z-index:2;bottom:12px;right:14px;border-radius:8px;background:#fff;padding:5px 8px;color:#aa7891;font-size:11px;box-shadow:0 2px 7px #dda5bb55}.preview-actions{display:flex;gap:10px;margin-top:17px}.outline{flex:1;border:1px solid #f3b2cc;background:white;color:#e85791;border-radius:12px;font:700 13px inherit;padding:10px;cursor:pointer}.outline:hover{background:#fff3f7}.stat{background:#fdf0f6;border-radius:12px;padding:7px 10px;font-size:12px;color:#9f7087;white-space:nowrap}.stat b{font-size:16px;color:#ec5995}.preview-editor{display:flex;align-items:center;gap:9px;margin-top:13px;padding:10px 12px;background:#fff1f6;border-radius:13px;font-size:12px}.preview-editor b{color:#e54e8b}.preview-editor input{width:30px;height:30px;border:0;background:transparent;padding:0}.source-preview{display:none;align-items:center;gap:14px;margin-top:14px;padding:12px;background:#fff6fa;border:1px solid #f7dbe7;border-radius:15px}.source-preview.show{display:flex}.source-preview img{width:104px;height:104px;object-fit:contain;background:#f7f7f9;border-radius:11px}.source-preview b{font-size:13px}.source-preview span{display:block;color:#a67c91;font-size:11px;margin-top:3px}.source-preview .source-note{display:inline-block;margin-top:8px;padding:4px 7px;background:#fff;border-radius:8px;color:#e85791;font-weight:700}.preview-editor.empty{color:#946e80}.zoom-control{display:flex;align-items:center;gap:8px;margin-top:11px;color:#946e80;font-size:12px}.zoom-control input{flex:1;accent-color:#ff5a99}.zoom-control b{color:#e85791;min-width:38px}
     .bottom{margin-top:22px}.legend-item{display:flex;align-items:center;gap:6px;background:#fff6f9;border-radius:10px;padding:7px 9px;font-size:11px;color:#8d6277}.dot{width:12px;height:12px;border-radius:4px;box-shadow:inset 0 -2px #0002}.count-table{width:100%;border-collapse:collapse;font-size:13px}.count-table th{text-align:left;color:#b18a9d;font-size:11px;padding:0 0 10px}.count-table td{padding:9px 0;border-top:1px dashed #f2dbe5}.code{font:800 13px "Baloo 2";color:#6b3d61}.total{margin-top:13px;border-radius:14px;background:linear-gradient(100deg,#fff0f6,#f8f0ff);padding:12px;display:flex;align-items:center;justify-content:space-between;font-size:13px}.total strong{font:800 22px "Baloo 2";color:#f05191}.toast{position:fixed;bottom:25px;left:50%;transform:translate(-50%,100px);background:#5d3858;color:#fff;border-radius:99px;padding:11px 18px;font-size:13px;box-shadow:0 8px 20px #4a234644;transition:.25s;z-index:10}.toast.show{transform:translate(-50%,0)}
-    @media(max-width:850px){.workspace{grid-template-columns:1fr}.hero{height:190px}.canvas-wrap{height:430px}}@media(max-width:560px){.wrap{padding:0 12px 26px}.nav{height:68px}.nav-pill{display:none}.hero{padding:28px 22px;height:175px}.hero h1{font-size:27px}.workspace{margin-top:15px;gap:15px}.card{padding:16px;border-radius:20px}.dropzone{min-height:120px;padding:14px}.upload-icon{width:52px;flex-basis:52px;height:52px;font-size:25px}.dropzone h3{font-size:14px}.controls{flex-wrap:wrap;gap:10px}.segmented{width:100%;justify-content:space-between}.segmented button{flex:1}.range{width:calc(100% - 68px)}.primary{width:100%}.canvas-wrap{height:min(82vw,370px)}.preview-actions{flex-wrap:wrap}.preview-actions button{min-width:calc(50% - 5px)}.preview-editor{flex-wrap:wrap}.source-preview{align-items:flex-start}.source-preview img{width:78px;height:78px}.count-table{font-size:12px}.count-table td{padding:7px 0}.total{font-size:11px}.total strong{font-size:18px}}
+    @media(max-width:850px){.workspace{grid-template-columns:1fr}.hero{height:190px}.canvas-wrap{height:430px}}@media(max-width:560px){.wrap{padding:0 12px 26px}.nav{height:68px}.nav-pill{display:none}.hero{padding:28px 22px;height:175px}.hero h1{font-size:27px}.workspace{margin-top:15px;gap:15px}.card{padding:16px;border-radius:20px}.dropzone{min-height:120px;padding:14px}.upload-icon{width:52px;flex-basis:52px;height:52px;font-size:25px}.dropzone h3{font-size:14px}.controls{flex-wrap:wrap;gap:10px}.segmented{width:100%;justify-content:space-between}.segmented button{flex:1}.range{width:calc(100% - 68px)}.primary{width:100%}.canvas-wrap{height:min(82vw,370px);padding:10px}.preview-actions{flex-wrap:wrap}.preview-actions button{min-width:calc(50% - 5px)}.preview-editor{flex-wrap:wrap}.source-preview{align-items:flex-start}.source-preview img{width:78px;height:78px}.count-table{font-size:12px}.count-table td{padding:7px 0}.total{font-size:11px}.total strong{font-size:18px}}
   </style>
 </head>
 <body>
@@ -28,10 +28,10 @@
     <section class="workspace">
       <div class="card">
         <h2 class="section-title">① 上传图片 <span class="badge">开始创作</span></h2>
-        <label class="dropzone" id="dropzone"><div class="upload-icon">☁</div><div><h3>拖入图片，或点击这里上传</h3><p>支持 JPG、PNG、WEBP 格式，建议使用主体清晰的图片</p><button type="button" class="file-btn">选择一张图片</button></div><input id="imageUpload" type="file" accept="image/*"></label><div class="source-preview" id="sourcePreview" aria-live="polite"><img id="sourceImagePreview" alt="原始上传图片预览"><div><b>原始图片预览</b><span id="sourceImageInfo">将以此图片生成拼豆图</span><span class="source-note">白色 / 浅灰背景不会计入拼豆</span></div></div>
+        <label class="dropzone" id="dropzone"><div class="upload-icon">☁</div><div><h3>拖入图片，或点击这里上传</h3><p>支持 JPG、PNG、WEBP 格式，建议使用主体清晰的图片</p><button type="button" class="file-btn">选择一张图片</button></div><input id="imageUpload" type="file" accept="image/*"></label><div class="source-preview" id="sourcePreview" aria-live="polite"><img id="sourceImagePreview" alt="原始上传图片预览"><div><b>原始图片预览</b><span id="sourceImageInfo">将以此图片生成拼豆图</span><span class="source-note">仅图像外围白色 / 浅灰背景不会计入拼豆</span></div></div>
         <div class="controls"><span class="control-label">拼豆尺寸</span><div class="segmented" id="sizeButtons"><button data-size="26" class="active">迷你</button><button data-size="52">标准</button><button data-size="104">精细</button></div><span class="control-label">颗粒密度</span><input class="range" id="density" type="range" min="26" max="104" value="26"><span class="range-val" id="densityVal">26 × 26</span><button class="primary" id="generateBtn">生成拼豆图 ✦</button></div>
       </div>
-      <div class="card preview-card"><h2 class="section-title">② 拼豆预览 <span class="stat">共 <b id="beadTotal">676</b> 颗</span></h2><div class="canvas-wrap"><canvas id="beadCanvas" width="480" height="480"></canvas><span class="canvas-label">点击圆形拼豆即可替换该色号</span></div><div class="preview-editor empty" id="previewEditor"><span>点击拼豆预览中的圆形色号，即可替换该色号颜色</span></div><div class="preview-actions"><button class="outline" id="downloadBtn">⇩ 保存图纸</button><button class="outline" id="randomBtn">↻ 重新生成</button></div></div>
+      <div class="card preview-card"><h2 class="section-title">② 拼豆预览 <span class="stat">共 <b id="beadTotal">676</b> 颗</span></h2><div class="canvas-wrap"><canvas id="beadCanvas" width="480" height="480"></canvas><span class="canvas-label">拖动浏览 · 点击圆形色号即可替换</span></div><div class="zoom-control"><span>预览缩放</span><input id="previewZoom" type="range" min="50" max="200" value="72" aria-label="预览缩放"><b id="zoomValue">72%</b></div><div class="preview-editor empty" id="previewEditor"><span>点击拼豆预览中的圆形色号，即可替换该色号颜色</span></div><div class="preview-actions"><button class="outline" id="downloadBtn">⇩ 保存图纸</button><button class="outline" id="randomBtn">↻ 重新生成</button></div></div>
     </section>
     <section class="bottom">
       <div class="card"><h2 class="section-title">③ 色号用量清单 <span class="badge">准备材料</span></h2><table class="count-table"><thead><tr><th>拼豆色号</th><th>颜色</th><th>数量</th></tr></thead><tbody id="countBody"></tbody></table><div class="total"><span>预计需要拼豆</span><strong id="totalBottom">676 颗</strong><span>建议多备 5%</span></div></div>
@@ -47,7 +47,8 @@ F1 #FD957B|F10 #8A4526|F11 #5A2121|F12 #FD4E6A|F13 #F35744|F14 #FFA9AD|F15 #D300
 G1 #FFE2CE|G10 #D98C39|G11 #E0C593|G12 #FFC890|G13 #B7714A|G14 #8D614C|G15 #FCF9E0|G16 #F2D9BA|G17 #78524B|G18 #FFE4CC|G19 #E07935|G2 #FFC4AA|G20 #A94023|G21 #B88558|G3 #F4C3A5|G4 #E1B383|G5 #EDB045|G6 #E99C17|G7 #9D5B3E|G8 #753832|G9 #E6B483
 H1 #FDFBFF|H10 #EEE9EA|H11 #CECDD5|H12 #FFF5ED|H13 #F5ECD2|H14 #CFD7D3|H15 #98A6A8|H16 #1D1414|H17 #F1EDED|H18 #FFFDF0|H19 #F6EFE2|H2 #FEFFFF|H20 #949FA3|H21 #FFFBE1|H22 #CACAD4|H23 #9A9D94|H3 #B6B1BA|H4 #89858C|H5 #48464E|H6 #2F2B2F|H7 #000000|H8 #E7D6DB|H9 #EDEDED
 M1 #BCC6B8|M10 #C5B2BC|M11 #9F7594|M12 #644749|M13 #D19066|M14 #C77362|M15 #757D78|M2 #8AA386|M3 #697D80|M4 #E3D2BC|M5 #D0CCAA|M6 #B0A782|M7 #B4A497|M8 #B38281|M9 #A58767`.replace(/\s*\n\s*/g,'|').split('|').map(entry=>{const [id,color]=entry.trim().split(/\s+/);return {id,name:id,color}});
-    let size=26, selected=0, sourceImage=null, beadIndices=[];
+    let size=26, selected=0, sourceImage=null, beadIndices=[], previewZoom=72;
+    const BEAD_RENDER_SIZE=30;
     const canvas=document.getElementById('beadCanvas'), ctx=canvas.getContext('2d');
     const $=s=>document.querySelector(s);
     const showToast=t=>{const e=$('#toast');e.textContent=t;e.classList.add('show');setTimeout(()=>e.classList.remove('show'),2200)};
@@ -59,14 +60,15 @@ M1 #BCC6B8|M10 #C5B2BC|M11 #9F7594|M12 #644749|M13 #D19066|M14 #C77362|M15 #757D
       ctx.fillStyle=palette.color; ctx.beginPath(); ctx.arc(cx,cy,radius,0,Math.PI*2); ctx.fill();
       ctx.fillStyle='#ffffff66'; ctx.beginPath(); ctx.arc(cx-cell*.13,cy-cell*.15,Math.max(.7,cell*.12),0,Math.PI*2); ctx.fill();
       ctx.strokeStyle='#0000002b'; ctx.lineWidth=Math.max(.4,cell*.035); ctx.stroke();
-      if(cell>=15){
-        ctx.fillStyle='#442b42'; ctx.font=`800 ${Math.max(7,cell*.25)}px sans-serif`;
-        ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText(palette.id,cx,cy+cell*.02);
-      }
+      ctx.fillStyle='#442b42'; ctx.font=`800 ${Math.max(8,cell*.29)}px sans-serif`;
+      ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText(palette.id,cx,cy+cell*.02);
     }
 
     function redrawBeads(){
-      const cell=canvas.width/size; ctx.clearRect(0,0,canvas.width,canvas.height);
+      const renderSize=size*BEAD_RENDER_SIZE;
+      canvas.width=renderSize; canvas.height=renderSize;
+      canvas.style.width=`${renderSize*previewZoom/100}px`; canvas.style.height=`${renderSize*previewZoom/100}px`;
+      const cell=BEAD_RENDER_SIZE; ctx.clearRect(0,0,canvas.width,canvas.height);
       beadIndices.forEach((paletteIndex,index)=>{
         if(paletteIndex === null) return;
         const x=(index%size)*cell, y=Math.floor(index/size)*cell;
@@ -88,10 +90,30 @@ M1 #BCC6B8|M10 #C5B2BC|M11 #9F7594|M12 #644749|M13 #D19066|M14 #C77362|M15 #757D
       redrawBeads();
     }
 
-    function isBackground(r,g,b,a){
+    function isLightPixel(r,g,b,a){
       if(a < 32) return true;
       const brightness=(r+g+b)/3, spread=Math.max(r,g,b)-Math.min(r,g,b);
       return brightness>=238 && spread<=18;
+    }
+
+    // Only a light region connected to the outside edge is background. Light
+    // details enclosed by the subject remain beads and are counted.
+    function outerBackgroundMask(data,n){
+      const mask=new Uint8Array(n*n), queue=[];
+      const add=index=>{
+        if(mask[index]) return;
+        const k=index*4;
+        if(!isLightPixel(data[k],data[k+1],data[k+2],data[k+3])) return;
+        mask[index]=1; queue.push(index);
+      };
+      for(let x=0;x<n;x++){add(x);add((n-1)*n+x);}
+      for(let y=1;y<n-1;y++){add(y*n);add(y*n+n-1);}
+      for(let head=0;head<queue.length;head++){
+        const index=queue[head], x=index%n, y=Math.floor(index/n);
+        if(x>0) add(index-1); if(x<n-1) add(index+1);
+        if(y>0) add(index-n); if(y<n-1) add(index+n);
+      }
+      return mask;
     }
 
     function closestPalette(r,g,b,colors){
@@ -112,10 +134,10 @@ M1 #BCC6B8|M10 #C5B2BC|M11 #9F7594|M12 #644749|M13 #D19066|M14 #C77362|M15 #757D
       const ratio=Math.min(n/sourceImage.width,n/sourceImage.height);
       const width=sourceImage.width*ratio, height=sourceImage.height*ratio;
       offCtx.drawImage(sourceImage,(n-width)/2,(n-height)/2,width,height);
-      const data=offCtx.getImageData(0,0,n,n).data, colors=paletteRgb(); beadIndices=[];
+      const data=offCtx.getImageData(0,0,n,n).data, colors=paletteRgb(), outerBackground=outerBackgroundMask(data,n); beadIndices=[];
       for(let i=0;i<n*n;i++){
-        const k=i*4, r=data[k],g=data[k+1],b=data[k+2],a=data[k+3];
-        beadIndices.push(isBackground(r,g,b,a) ? null : closestPalette(r,g,b,colors));
+        const k=i*4, r=data[k],g=data[k+1],b=data[k+2];
+        beadIndices.push(outerBackground[i] ? null : closestPalette(r,g,b,colors));
       }
       redrawBeads();
     }
@@ -145,13 +167,14 @@ M1 #BCC6B8|M10 #C5B2BC|M11 #9F7594|M12 #644749|M13 #D19066|M14 #C77362|M15 #757D
       quantizeSourceImage();
     }
 
+    $('#previewZoom').oninput=e=>{previewZoom=+e.target.value;$('#zoomValue').textContent=previewZoom+'%';redrawBeads();};
     $('#density').oninput=e=>setSize(+e.target.value);
     $('#sizeButtons').onclick=e=>{if(e.target.tagName==='BUTTON') setSize(+e.target.dataset.size);};
     canvas.addEventListener('click',event=>{
       const rect=canvas.getBoundingClientRect();
       const x=Math.floor((event.clientX-rect.left)*size/rect.width), y=Math.floor((event.clientY-rect.top)*size/rect.height);
       const index=beadIndices[y*size+x];
-      if(index===null || index===undefined){showToast('这里是浅色背景，不计入拼豆数量');return;}
+      if(index===null || index===undefined){showToast('这里是图像外围背景，不计入拼豆数量');return;}
       selected=index; renderPreviewEditor(); showToast(`已选中 ${palettes[index].id}，可在下方替换颜色`);
     });
 
@@ -159,7 +182,7 @@ M1 #BCC6B8|M10 #C5B2BC|M11 #9F7594|M12 #644749|M13 #D19066|M14 #C77362|M15 #757D
       if(!file || !file.type.startsWith('image/')) return;
       const img=new Image(); img.onload=()=>{
         sourceImage=img; $('#sourceImagePreview').src=img.src; $('#sourceImageInfo').textContent=`${img.naturalWidth} × ${img.naturalHeight} 图片将用于生成拼豆图`; $('#sourcePreview').classList.add('show');
-        quantizeSourceImage(); showToast('图片已加载，已忽略白色/浅灰背景！');
+        quantizeSourceImage(); showToast('图片已加载，仅已忽略图像外围的白色/浅灰背景！');
       }; img.src=URL.createObjectURL(file);
     }
     $('#imageUpload').onchange=e=>loadImage(e.target.files[0]);
