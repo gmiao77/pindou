@@ -17,7 +17,6 @@
     .dropzone{position:relative;display:flex;gap:18px;align-items:center;min-height:144px;border:2px dashed #f4a8c6;border-radius:20px;background:linear-gradient(135deg,#fff8fb,#fff3f8);padding:20px;transition:.2s}.dropzone.drag{background:#ffe5f0;border-color:#ff69a2;transform:scale(1.01)}.upload-icon{flex:0 0 66px;height:66px;border-radius:21px;display:grid;place-items:center;background:#ffd9e8;color:#ff5a9d;font-size:31px}.dropzone h3{font-size:16px;margin:0 0 6px}.dropzone p{font-size:12px;color:#a98598;margin:0}.file-btn{margin-top:11px;border:0;border-radius:10px;padding:8px 13px;background:#fff;color:#ec5c98;font:700 12px inherit;box-shadow:0 3px 9px #efb7ce;cursor:pointer}.file-btn:hover,.primary:hover{transform:translateY(-1px)}#imageUpload{position:absolute;inset:0;opacity:0;cursor:pointer}
     .controls{display:flex;align-items:center;gap:14px;margin-top:18px;padding-top:17px;border-top:1px solid #fae5ee}.control-label{font-weight:700;font-size:14px;white-space:nowrap}.segmented{display:flex;background:#f8edf3;padding:4px;border-radius:13px;gap:3px}.segmented button{border:0;border-radius:9px;padding:6px 10px;background:transparent;color:#966d81;font:600 12px inherit;cursor:pointer}.segmented button.active{background:#fff;color:#ed4e91;box-shadow:0 2px 7px #d89aaf55}.range{accent-color:#ff5a99;width:100%}.range-val{color:#f25291;font:800 14px "Baloo 2"}.primary{border:0;border-radius:14px;color:#fff;background:linear-gradient(135deg,#ff5596,#ff76ad);padding:11px 18px;font:800 14px inherit;box-shadow:0 5px 0 #e74685,0 9px 17px #ed79a488;cursor:pointer;transition:.15s;white-space:nowrap}
     
-    /* 画布与缩放区调整 */
     .preview-card{padding:22px}
     .canvas-wrap{height:400px; width:100%; border-radius:16px; background:#f7f7f9; overflow:auto; position:relative; scrollbar-width:thin; scrollbar-color:#f4d5e2 transparent;}
     .canvas-wrap::-webkit-scrollbar{width:8px; height:8px;}
@@ -28,7 +27,6 @@
     .canvas-label{position:absolute;z-index:2;bottom:12px;right:14px;border-radius:8px;background:#fff;padding:5px 8px;color:#aa7891;font-size:11px;box-shadow:0 2px 7px #dda5bb55; pointer-events:none;}
     .preview-actions{display:flex;gap:10px;margin-top:17px}.outline{flex:1;border:1px solid #f3b2cc;background:white;color:#e85791;border-radius:12px;font:700 13px inherit;padding:10px;cursor:pointer}.outline:hover{background:#fff3f7}.stat{background:#fdf0f6;border-radius:12px;padding:7px 10px;font-size:12px;color:#9f7087;white-space:nowrap}.stat b{font-size:16px;color:#ec5995}
     
-    /* 替换颜色区域加强版 */
     .preview-editor{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:13px;padding:12px 14px;background:#fff1f6;border-radius:13px;font-size:13px; min-height:58px;}
     .preview-editor.empty{color:#946e80; font-size:12px; justify-content:center;}
     .preview-editor b{color:#e54e8b; font-size:15px; min-width:32px;}
@@ -41,7 +39,6 @@
     .source-preview{display:none;align-items:center;gap:14px;margin-top:14px;padding:12px;background:#fff6fa;border:1px solid #f7dbe7;border-radius:15px}.source-preview.show{display:flex}.source-preview img{width:104px;height:104px;object-fit:contain;background:#f7f7f9;border-radius:11px}.source-preview b{font-size:13px}.source-preview span{display:block;color:#a67c91;font-size:11px;margin-top:3px}.source-preview .source-note{display:inline-block;margin-top:8px;padding:4px 7px;background:#fff;border-radius:8px;color:#e85791;font-weight:700}.zoom-control{display:flex;align-items:center;gap:8px;margin-top:14px;color:#946e80;font-size:13px}.zoom-control input{flex:1;accent-color:#ff5a99}.zoom-control b{color:#e85791;min-width:42px}
     .bottom{margin-top:22px}.legend-item{display:flex;align-items:center;gap:6px;background:#fff6f9;border-radius:10px;padding:7px 9px;font-size:11px;color:#8d6277}.dot{width:12px;height:12px;border-radius:4px;box-shadow:inset 0 -2px #0002}.count-table{width:100%;border-collapse:collapse;font-size:13px}.count-table th{text-align:left;color:#b18a9d;font-size:11px;padding:0 0 10px}.count-table td{padding:9px 0;border-top:1px dashed #f2dbe5}.code{font:800 13px "Baloo 2";color:#6b3d61}.total{margin-top:13px;border-radius:14px;background:linear-gradient(100deg,#fff0f6,#f8f0ff);padding:12px;display:flex;align-items:center;justify-content:space-between;font-size:13px}.total strong{font:800 22px "Baloo 2";color:#f05191}.toast{position:fixed;bottom:25px;left:50%;transform:translate(-50%,100px);background:#5d3858;color:#fff;border-radius:99px;padding:11px 18px;font-size:13px;box-shadow:0 8px 20px #4a234644;transition:.25s;z-index:10}.toast.show{transform:translate(-50%,0)}
     
-    /* 手机端深度适配 */
     @media(max-width:850px){.workspace{grid-template-columns:1fr}.hero{height:190px}}
     @media(max-width:560px){
       .wrap{padding:0 12px 26px}.nav{height:68px}.nav-pill{display:none}
@@ -76,12 +73,13 @@
       </div>
       <div class="card preview-card">
         <h2 class="section-title">② 拼豆预览 <span class="stat">共 <b id="beadTotal">676</b> 颗</span></h2>
+        <!-- 外部固定高度大小、内部靠 Zoom 属性缩放 -->
         <div class="canvas-wrap">
-            <canvas id="beadCanvas" width="480" height="480"></canvas>
-            <span class="canvas-label">拖动浏览 · 点击色号替换</span>
+            <canvas id="beadCanvas"></canvas>
+            <span class="canvas-label">拖动浏览 · 点击色号可单点替换</span>
         </div>
         <div class="zoom-control"><span>预览缩放</span><input id="previewZoom" type="range" min="30" max="250" value="72" aria-label="预览缩放"><b id="zoomValue">72%</b></div>
-        <div class="preview-editor empty" id="previewEditor"><span>点击拼豆预览中的圆形色号，即可替换该色号颜色</span></div>
+        <div class="preview-editor empty" id="previewEditor"><span>点击拼豆预览中的圆形色号，即可替换该拼豆颜色</span></div>
         <div class="preview-actions"><button class="outline" id="downloadBtn">⇩ 保存图纸</button><button class="outline" id="randomBtn">↻ 重新生成</button></div>
       </div>
     </section>
@@ -99,15 +97,18 @@ F1 #FD957B|F10 #8A4526|F11 #5A2121|F12 #FD4E6A|F13 #F35744|F14 #FFA9AD|F15 #D300
 G1 #FFE2CE|G10 #D98C39|G11 #E0C593|G12 #FFC890|G13 #B7714A|G14 #8D614C|G15 #FCF9E0|G16 #F2D9BA|G17 #78524B|G18 #FFE4CC|G19 #E07935|G2 #FFC4AA|G20 #A94023|G21 #B88558|G3 #F4C3A5|G4 #E1B383|G5 #EDB045|G6 #E99C17|G7 #9D5B3E|G8 #753832|G9 #E6B483
 H1 #FDFBFF|H10 #EEE9EA|H11 #CECDD5|H12 #FFF5ED|H13 #F5ECD2|H14 #CFD7D3|H15 #98A6A8|H16 #1D1414|H17 #F1EDED|H18 #FFFDF0|H19 #F6EFE2|H2 #FEFFFF|H20 #949FA3|H21 #FFFBE1|H22 #CACAD4|H23 #9A9D94|H3 #B6B1BA|H4 #89858C|H5 #48464E|H6 #2F2B2F|H7 #000000|H8 #E7D6DB|H9 #EDEDED
 M1 #BCC6B8|M10 #C5B2BC|M11 #9F7594|M12 #644749|M13 #D19066|M14 #C77362|M15 #757D78|M2 #8AA386|M3 #697D80|M4 #E3D2BC|M5 #D0CCAA|M6 #B0A782|M7 #B4A497|M8 #B38281|M9 #A58767`.replace(/\s*\n\s*/g,'|').split('|').map(entry=>{const [id,color]=entry.trim().split(/\s+/);return {id,name:id,color}});
-    let size=26, selected=0, sourceImage=null, beadIndices=[], previewZoom=72;
-    const BEAD_RENDER_SIZE=30;
+    
+    // 基础视觉基准尺寸，与密度（26、52、104）解绑
+    const BASE_VISUAL_SIZE = 780; 
+    const BEAD_RENDER_SIZE = 30;
+    
+    let size=26, selectedBeadPos=null, sourceImage=null, beadIndices=[], previewZoom=72;
     const canvas=document.getElementById('beadCanvas'), ctx=canvas.getContext('2d');
     const $=s=>document.querySelector(s);
     const showToast=t=>{const e=$('#toast');e.textContent=t;e.classList.add('show');setTimeout(()=>e.classList.remove('show'),2200)};
     const hexToRgb=color=>[parseInt(color.slice(1,3),16),parseInt(color.slice(3,5),16),parseInt(color.slice(5,7),16)];
     const paletteRgb=()=>palettes.map(p=>hexToRgb(p.color));
 
-    // 计算颜色的亮度以决定文本颜色（深色背景配浅色字，浅色背景配深色字）
     const getContrastYIQ = hex => {
       const r = parseInt(hex.substring(1, 3), 16);
       const g = parseInt(hex.substring(3, 5), 16);
@@ -118,31 +119,46 @@ M1 #BCC6B8|M10 #C5B2BC|M11 #9F7594|M12 #644749|M13 #D19066|M14 #C77362|M15 #757D
 
     function drawBead(x,y,cell,palette){
       const cx=x+cell/2, cy=y+cell/2, radius=Math.max(1,cell*.47);
-      // 纯色拼豆背景
       ctx.fillStyle=palette.color; ctx.beginPath(); ctx.arc(cx,cy,radius,0,Math.PI*2); ctx.fill();
-      // 拼豆边缘线
       ctx.strokeStyle='#0000001a'; ctx.lineWidth=Math.max(.4,cell*.04); ctx.stroke();
-      
-      // 智能识别深浅色号文本
       ctx.fillStyle=getContrastYIQ(palette.color); 
       ctx.font=`700 ${Math.max(8,cell*.28)}px "Baloo 2", sans-serif`;
       ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText(palette.id,cx,cy+cell*.03);
     }
 
     function redrawBeads(){
-      const renderSize=size*BEAD_RENDER_SIZE;
-      canvas.width=renderSize; canvas.height=renderSize;
+      const renderSize = size * BEAD_RENDER_SIZE;
+      // 物理像素尺寸跟随密度变化，保证高清
+      canvas.width = renderSize; canvas.height = renderSize;
       
-      // 让外围容器固定，画布自身尺寸改变以实现缩放
-      canvas.style.width=`${renderSize*previewZoom/100}px`; 
-      canvas.style.height=`${renderSize*previewZoom/100}px`;
+      // CSS尺寸永远锚定固定的 BASE_VISUAL_SIZE 基础，仅通过 Zoom 缩放控制，不会越变越大
+      canvas.style.width = `${BASE_VISUAL_SIZE * previewZoom / 100}px`; 
+      canvas.style.height = `${BASE_VISUAL_SIZE * previewZoom / 100}px`;
       
-      const cell=BEAD_RENDER_SIZE; ctx.clearRect(0,0,canvas.width,canvas.height);
+      const cell = BEAD_RENDER_SIZE; 
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      
       beadIndices.forEach((paletteIndex,index)=>{
         if(paletteIndex === null) return;
         const x=(index%size)*cell, y=Math.floor(index/size)*cell;
         drawBead(x,y,cell,palettes[paletteIndex]);
       });
+
+      // 绘制单颗选中拼豆的光环
+      if (selectedBeadPos !== null && beadIndices[selectedBeadPos] !== null && beadIndices[selectedBeadPos] !== undefined) {
+        const x = (selectedBeadPos % size) * cell;
+        const y = Math.floor(selectedBeadPos / size) * cell;
+        ctx.strokeStyle = '#ffffff';
+        ctx.lineWidth = Math.max(3, cell * 0.15);
+        ctx.beginPath();
+        ctx.arc(x + cell/2, y + cell/2, Math.max(1, cell * 0.38), 0, Math.PI*2);
+        ctx.stroke();
+
+        ctx.strokeStyle = '#ff3f88';
+        ctx.lineWidth = Math.max(2, cell * 0.08);
+        ctx.stroke();
+      }
+      
       updateCounts();
     }
 
@@ -156,7 +172,9 @@ M1 #BCC6B8|M10 #C5B2BC|M11 #9F7594|M12 #644749|M13 #D19066|M14 #C77362|M15 #757D
         else if(x>n*.74&&y<n*.4) index=6;
         beadIndices.push(index);
       }
+      selectedBeadPos = null;
       redrawBeads();
+      renderPreviewEditor();
     }
 
     function isLightPixel(r,g,b,a){
@@ -205,7 +223,9 @@ M1 #BCC6B8|M10 #C5B2BC|M11 #9F7594|M12 #644749|M13 #D19066|M14 #C77362|M15 #757D
         const k=i*4, r=data[k],g=data[k+1],b=data[k+2];
         beadIndices.push(outerBackground[i] ? null : closestPalette(r,g,b,colors));
       }
+      selectedBeadPos = null;
       redrawBeads();
+      renderPreviewEditor();
     }
 
     function updateCounts(){
@@ -215,16 +235,21 @@ M1 #BCC6B8|M10 #C5B2BC|M11 #9F7594|M12 #644749|M13 #D19066|M14 #C77362|M15 #757D
         `<tr><td class="code">${palette.id}</td><td><span class="legend-item"><i class="dot" style="background:${palette.color}"></i>${palette.color}</span></td><td><b>${count} 颗</b></td></tr>`
       ).join('') || '<tr><td colspan="3">未识别到需要的拼豆颜色</td></tr>';
       const total=beadIndices.filter(index=>index!==null).length;
-      $('#beadTotal').textContent=total; $('#totalBottom').textContent=total+' 颗'; renderPreviewEditor();
+      $('#beadTotal').textContent=total; $('#totalBottom').textContent=total+' 颗';
     }
 
     function renderPreviewEditor(){
-      const panel=$('#previewEditor'), palette=palettes[selected];
-      if(!palette){panel.classList.add('empty');panel.innerHTML='<span>点击拼豆预览中的圆形色号，即可替换该色号的颜色。</span>';return;}
+      const panel=$('#previewEditor');
+      if(selectedBeadPos === null || beadIndices[selectedBeadPos] === null || beadIndices[selectedBeadPos] === undefined) {
+          panel.classList.add('empty');
+          panel.innerHTML='<span>点击拼豆预览中的圆形色号，即可替换该拼豆颜色</span>';
+          return;
+      }
+      const palette = palettes[beadIndices[selectedBeadPos]];
       panel.classList.remove('empty');
       // 补全替换颜色功能：色盘 + 色号输入框
       panel.innerHTML=`
-        <span>正在替换色号</span><b>${palette.id}</b>
+        <span>正在替换该单颗拼豆</span><b id="editorPalId">${palette.id}</b>
         <div class="color-inputs">
             <input id="colorPicker" type="color" value="${palette.color}" aria-label="调色盘">
             <input id="colorHex" type="text" value="${palette.color}" maxlength="7" placeholder="#FFFFFF">
@@ -232,19 +257,26 @@ M1 #BCC6B8|M10 #C5B2BC|M11 #9F7594|M12 #644749|M13 #D19066|M14 #C77362|M15 #757D
         <span class="hint">可输入色号或使用色盘</span>
       `;
       
-      const updateColor = (val) => {
+      const updateColor = (val, isFromPicker) => {
         const hex = val.toUpperCase();
         if(/^#[0-9A-F]{6}$/i.test(hex)){
-          palette.color = hex;
-          $('#colorPicker').value = hex;
-          $('#colorHex').value = hex;
+          // 查找是否已存在该颜色，没有就动态创建 DIY 色号，这样就只对当前这一颗拼豆进行修改
+          let newIndex = palettes.findIndex(p => p.color === hex);
+          if (newIndex === -1) {
+              newIndex = palettes.length;
+              palettes.push({id: 'DIY', name: 'DIY', color: hex});
+          }
+          beadIndices[selectedBeadPos] = newIndex;
+          
+          if(!isFromPicker) $('#colorPicker').value = hex;
+          $('#editorPalId').textContent = palettes[newIndex].id;
           redrawBeads();
         }
       };
 
-      $('#colorPicker').oninput=e=>updateColor(e.target.value);
-      $('#colorHex').oninput=e=>updateColor(e.target.value);
-      $('#colorHex').onchange=e=>showToast(`${palette.id} 的颜色已更新`);
+      $('#colorPicker').oninput = e => { updateColor(e.target.value, true); $('#colorHex').value = e.target.value.toUpperCase(); };
+      $('#colorHex').oninput = e => updateColor(e.target.value, false);
+      $('#colorHex').onchange = e => showToast(`单颗拼豆颜色已更新`);
     }
 
     function setSize(nextSize){
@@ -258,13 +290,20 @@ M1 #BCC6B8|M10 #C5B2BC|M11 #9F7594|M12 #644749|M13 #D19066|M14 #C77362|M15 #757D
     $('#density').oninput=e=>setSize(+e.target.value);
     $('#sizeButtons').onclick=e=>{if(e.target.tagName==='BUTTON') setSize(+e.target.dataset.size);};
     
-    // 画布点击选中逻辑
+    // 画布点击选中单颗拼豆逻辑
     canvas.addEventListener('click',event=>{
       const rect=canvas.getBoundingClientRect();
-      const x=Math.floor((event.clientX-rect.left)*size/rect.width), y=Math.floor((event.clientY-rect.top)*size/rect.height);
-      const index=beadIndices[y*size+x];
-      if(index===null || index===undefined){showToast('这里是图像外围背景，不计入拼豆数量');return;}
-      selected=index; renderPreviewEditor(); showToast(`已选中 ${palettes[index].id}，可在下方修改色值`);
+      const x = Math.floor((event.clientX - rect.left) * size / rect.width);
+      const y = Math.floor((event.clientY - rect.top) * size / rect.height);
+      const pos = y * size + x;
+      const index = beadIndices[pos];
+      
+      if(index === null || index === undefined){showToast('这里是图像外围背景，不计入拼豆数量');return;}
+      
+      selectedBeadPos = pos; 
+      redrawBeads(); // 重绘为了显示高亮光环
+      renderPreviewEditor(); 
+      showToast(`已选中这颗拼豆 (${palettes[index].id})，可在下方修改独立颜色`);
     });
 
     function loadImage(file){
@@ -281,11 +320,11 @@ M1 #BCC6B8|M10 #C5B2BC|M11 #9F7594|M12 #644749|M13 #D19066|M14 #C77362|M15 #757D
     ['dragleave','drop'].forEach(type=>dz.addEventListener(type,event=>{event.preventDefault();dz.classList.remove('drag');}));
     dz.addEventListener('drop',event=>loadImage(event.dataTransfer.files[0]));
     $('#generateBtn').onclick=()=>{quantizeSourceImage();showToast(sourceImage?'拼豆图已重新生成！':'已为你生成可爱的示例图！');};
-    $('#randomBtn').onclick=()=>{quantizeSourceImage();showToast('已按当前官方色号重新生成！');};
+    $('#randomBtn').onclick=()=>{quantizeSourceImage();showToast('已按官方色板重新还原！');};
     
     $('#downloadBtn').onclick=()=>{
         const a=document.createElement('a');
-        a.download='幼稚园烫手_专属拼豆图.png';
+        a.download='专属拼豆图.png';
         a.href=canvas.toDataURL('image/png');
         a.click();
         showToast('图纸已保存到本地');
